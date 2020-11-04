@@ -13,7 +13,7 @@ class ReadDataSource implements IReadDataSource {
 
   @override
   Future<IList<Map<String, dynamic>>> listEntitiesOfKind(String kind) async {
-    const baseUrl = "localhost:8081";
+    const baseUrl = "http://localhost:8081";
     const projectID = "celbuxuat";
     const nameSpace = "ns69";
 
@@ -37,10 +37,22 @@ class ReadDataSource implements IReadDataSource {
       }
     };
 
-    final response = await client.post(url, body: body);
+    final headers = {
+      "content-type": "application/json",
+    };
+
+    final payload = jsonEncode(body);
+
+    final response = await client.post(
+      url,
+      body: payload,
+      headers: headers,
+    );
+
+    print(response.body);
 
     if (response.statusCode != 200) {
-      throw const SocketException("Could not connect to server");
+      throw const SocketException("Could not connect to DB");
     }
 
     final responseBody = jsonDecode(response.body) as Map<String, dynamic>;
