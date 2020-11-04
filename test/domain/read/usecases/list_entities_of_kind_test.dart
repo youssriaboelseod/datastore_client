@@ -6,11 +6,11 @@ import 'package:datastore_client/domain/read/usecases/list_entities_of_kind.dart
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test("Should return IList when call succeeds", () {
+  test("Should return IList when call succeeds", () async {
     final repository = SuccessReadRepository();
     final useCase = ListEntitiesOfKind(repository);
 
-    final actual = useCase("any");
+    final actual = await useCase("any");
     final expected = listFixture;
 
     expect(expected.isRight(), true);
@@ -21,7 +21,7 @@ void main() {
     final repository = FailureReadRepository();
     final useCase = ListEntitiesOfKind(repository);
 
-    final actual = useCase("any");
+    final actual = await useCase("any");
     const expected = failureFixture;
 
     expect(expected.isLeft(), true);
