@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="darkGrey">#222222</color>
+    <color name="blueGrey">#3D4F58</color>
+    <color name="bgOffwhite">#f5f6f7</color>
+    <color name="fontColor">#494747</color>
+    <color name="offGreen">#e8eeec</color>
+    <color name="happyGreen">#13AA52</color>
 </resources>

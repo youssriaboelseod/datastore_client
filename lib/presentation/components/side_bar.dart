@@ -6,8 +6,8 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorName.darkGrey,
-      width: context.maxWidth * 0.1,
+      color: ColorName.blueGrey,
+      width: context.maxWidth * 0.12,
       child: Column(
         children: const [
           Text(

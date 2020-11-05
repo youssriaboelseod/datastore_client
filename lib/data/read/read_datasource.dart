@@ -49,8 +49,6 @@ class ReadDataSource implements IReadDataSource {
       headers: headers,
     );
 
-    print(response.body);
-
     if (response.statusCode != 200) {
       throw const SocketException("Could not connect to DB");
     }

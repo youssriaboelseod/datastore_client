@@ -27,8 +27,6 @@ class ReadRepository implements IReadRepository {
     } on SocketException {
       return const Left(ReadFailure.socket());
     } catch (e) {
-      print("+++++++++++++++++++++++++++++++++++");
-      print(e);
       return const Left(ReadFailure.socket());
     }
   }
